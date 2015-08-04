@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+    <title>Hello World, AngularJS - ViralPatel.net</title>
+    <script type="text/javascript"
+        src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+        
+	 <!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+</head>
+<body>
+	<hr>
+    What is your name:
+    <input type="text" ng-model="sometext" />
+    <h1 ng-show="sometext">Hello {{ sometext }}</h1><br>
+    
+<hr>
+    Button Name <input type="text" ng-model="buttonlabel" />
+    Button Style<input type="text" ng-model="buttonclass" />
+    
+    <button class="btn {{buttonclass}}"> {{ buttonlabel }}</button>
+ <hr> 
+ 
+    <div class="container" data-ng-init="colours=['Orange', 'Black', 'Yellow']">
+    	<h3>What's your favourite colour?</h3>
+    	<ul>
+    		<li data-ng-repeat="colour in colours | orderBy: 'name'">{{ colour }}</li>
+    	</ul>
+    </div>
+    
+<hr>
+	<input type="text" ng-model="clientsearch" />
+	<br />
+	<div class="container" data-ng-init="clients=[
+	{name:'John smith',city:'Pretoria'},
+	{name:'Jane Black',city: 'Cape Town'},
+	{name:'Zay Sanders',city: 'Durban'}]">
+    	<h3>List of clients</h3>
+    	<ul>
+    		<li data-ng-repeat="client in clients | filter:clientsearch | orderBy:'city'">{{ client.name }} - {{ client.city | uppercase }}</li>
+    	</ul>
+    </div>
+    
+    
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+     
+</body>
+</html>
